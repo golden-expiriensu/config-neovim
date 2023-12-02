@@ -46,6 +46,13 @@ return require('packer').startup(function(use)
     use 'numToStr/prettierrc.nvim'
 
     -- soydev stuff
-    use 'nyoom-engineering/oxocarbon.nvim'
+    use 'mhinz/vim-startify'
+    use 'nvim-tree/nvim-web-devicons'
+    use {
+        'nvim-lualine/lualine.nvim',
+        branch = 'master',
+        requires = { { 'nvim-tree/nvim-web-devicons' } }
+    }
+    use 'luisiacc/gruvbox-baby'
     use { 'codota/tabnine-nvim', run = './dl_binaries.sh' }
 end)
