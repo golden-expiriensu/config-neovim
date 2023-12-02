@@ -1,4 +1,5 @@
 require('danil.packer')
-require('danil.remap')
-require('danil.set')
+require('danil.theme')
 require('danil.autosave')
+require('danil.set')
+require('danil.remap')
