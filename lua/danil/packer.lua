@@ -3,7 +3,10 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+local packer = require('packer')
+packer.init({ max_jobs = 10 })
+
+return packer.startup(function(use)
     -- required packages
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
