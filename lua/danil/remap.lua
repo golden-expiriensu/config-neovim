@@ -30,3 +30,8 @@ vim.keymap.set("n", "<leader>s", [[/\<<C-r><C-w>\>/gI]])
 vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
+
+vim.keymap.set("n", "<C-s><C-s>", function()
+    print("neovim session saved")
+    vim.cmd("mksession!")
+end)
