@@ -33,3 +33,5 @@ vim.keymap.set("n", "<C-s><C-s>", function()
     print("neovim session saved")
     vim.cmd("mksession!")
 end)
+
+vim.keymap.set("n", "<leader>n", "<cmd>noh<CR>")
