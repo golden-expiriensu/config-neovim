@@ -59,4 +59,7 @@ return packer.startup(function(use)
     }
     use 'luisiacc/gruvbox-baby'
     use { 'codota/tabnine-nvim', run = './dl_binaries.sh' }
+
+    -- postman can smd
+    use 'mistweaverco/kulala.nvim'
 end)

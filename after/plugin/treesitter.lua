@@ -17,6 +17,7 @@ require 'nvim-treesitter.configs'.setup {
         'vim',
         'vimdoc',
         'query',
+        'http',
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -36,3 +37,9 @@ require 'nvim-treesitter.configs'.setup {
         additional_vim_regex_highlighting = false,
     },
 }
+
+vim.filetype.add({
+    extension = {
+        ['http'] = 'http',
+    },
+})

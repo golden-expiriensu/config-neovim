@@ -34,4 +34,18 @@ vim.keymap.set("n", "<C-s><C-s>", function()
     vim.cmd("mksession!")
 end)
 
-vim.keymap.set("n", "<leader>n", "<cmd>noh<CR>")
+vim.keymap.set("n", "<leader>n", ":noh<CR>")
+
+-- kulala
+vim.api.nvim_set_keymap("n", "<C-k>", ":lua require('kulala').jump_prev()<CR>", {
+    noremap = true,
+    silent = true,
+})
+vim.api.nvim_set_keymap("n", "<C-j>", ":lua require('kulala').jump_next()<CR>", {
+    noremap = true,
+    silent = true,
+})
+vim.api.nvim_set_keymap("n", "<C-l>", ":lua require('kulala').run()<CR>", {
+    noremap = true,
+    silent = true,
+})
