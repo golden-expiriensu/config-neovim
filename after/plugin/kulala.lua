@@ -43,7 +43,9 @@ require('kulala').setup({
     },
     -- additional cURL options
     -- see: https://curl.se/docs/manpage.html
-    additional_curl_options = {},
+    additional_curl_options = {
+        '-k'
+    },
     -- scratchpad default contents
     scratchpad_default_contents = {
         "POST https://blinknode-ws.blinkfinance.net HTTP/1.1",
@@ -52,8 +54,8 @@ require('kulala').setup({
         "",
         "{",
         '  "jsonrpc": "2.0",',
-        '  "method": "evm_setAutomine",',
-        '  "params": [true],',
+        '  "method": "eth_chainId",',
+        '  "params": [],',
         '  "id": 0',
         "}",
     },
