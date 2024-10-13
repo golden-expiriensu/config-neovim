@@ -21,19 +21,21 @@ vim.keymap.set('v', '<leader>d', '"_d')
 vim.keymap.set('n', 'Q', '<nop>')
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
 
+-- Prev/next quick fix list item
 vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz")
+-- Prev/next diagnostic list item
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
 
-vim.keymap.set("n", "<leader>s", [[/\<<C-r><C-w>\>/gI]])
-vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
-vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
+vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn nil, err<Esc>bBviw")
 
 vim.keymap.set("n", "<C-s><C-s>", function()
     print("neovim session saved")
     vim.cmd("mksession!")
 end)
 
+-- Stop highlighting
 vim.keymap.set("n", "<leader>n", ":noh<CR>")
 
 -- kulala
@@ -46,6 +48,10 @@ vim.api.nvim_set_keymap("n", "<C-j>", ":lua require('kulala').jump_next()<CR>", 
     silent = true,
 })
 vim.api.nvim_set_keymap("n", "<C-l>", ":lua require('kulala').run()<CR>", {
+    noremap = true,
+    silent = true,
+})
+vim.api.nvim_set_keymap("n", "<C-s>", ":lua require('kulala').scratchpad()<CR>", {
     noremap = true,
     silent = true,
 })
